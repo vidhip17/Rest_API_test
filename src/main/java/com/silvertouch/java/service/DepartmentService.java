@@ -114,5 +114,22 @@ public class DepartmentService {
         return this.mapToEmployeeResDTO(employees);
     }
 
+    @Transactional
+    public EmployeeDTO updateEmployee(Long empId, EmployeeDTO dto) {
+        Employee existingEmp = empRepo.findById(empId)
+                .orElseThrow(() -> new IllegalArgumentException("Employee ID not found: " + empId));
 
+        // Optional: check email uniqueness if email is being changed
+        if (!existingEmp.getEmail().equals(dto.email()) && empRepo.existsByEmail(dto.email())) {
+            throw new IllegalArgumentException("Another employee already uses this email.");
+        }
+
+        existingEmp.setName(dto.name());
+        existingEmp.setEmail(dto.email());
+        existingEmp.setPosition(dto.position());
+        existingEmp.setSalary(dto.salary());
+
+        empRepo.save(existingEmp);
+        return dto;
+    }
 }
