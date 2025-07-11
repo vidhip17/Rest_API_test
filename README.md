@@ -1,4 +1,4 @@
-# 🧾 Spring Boot + Jasper Reports Example
+# 🧾 Spring Boot(REST APIs) + Jasper Reports Example
 
 This is a simple Spring Boot application that demonstrates how to generate PDF reports using **JasperReports**. JasperReports is a popular open-source reporting tool for Java applications that allows exporting data to PDF, Excel, Word, and more.
 
