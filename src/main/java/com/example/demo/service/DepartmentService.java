@@ -100,6 +100,9 @@ public class DepartmentService {
     }
 
     public List<EmpResDTO> getEmployeesByDept(Long deptId) {
+
+        deptRepo.findById(deptId)
+                .orElseThrow(() -> new IllegalArgumentException("Department ID not found: " + deptId));
         List<Employee> employees = empRepo.findAllByDepartmentId(deptId);
 
         return employees.stream()

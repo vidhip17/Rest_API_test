@@ -28,7 +28,7 @@ public class DepartmentController {
     }
 
     @PostMapping(value = "/addDepartment")
-    public ResponseEntity<DepartmentDTO> addDepartment(@RequestBody DepartmentDTO dto) {
+    public ResponseEntity<DepartmentDTO> addDepartment(@RequestBody @Valid DepartmentDTO dto) {
         return ResponseEntity.ok(service.addDepartment(dto));
     }
 
