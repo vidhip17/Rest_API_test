@@ -1,10 +1,9 @@
-package com.example.demo.service;
+package com.silvertouch.java.service;
 
-import com.example.demo.dtos.EmployeeReportDTO;
-import com.example.demo.model.Department;
-import com.example.demo.model.Employee;
-import com.example.demo.repo.DepartmentRepository;
-import com.example.demo.repo.EmployeeRepository;
+import com.silvertouch.java.dtos.EmployeeReportDTO;
+import com.silvertouch.java.model.Department;
+import com.silvertouch.java.model.Employee;
+import com.silvertouch.java.repo.DepartmentRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.core.io.ClassPathResource;

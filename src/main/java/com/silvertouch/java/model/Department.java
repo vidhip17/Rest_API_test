@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.silvertouch.java.model;
 
 import jakarta.persistence.*;
 

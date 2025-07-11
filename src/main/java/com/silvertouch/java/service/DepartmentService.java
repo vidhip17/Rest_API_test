@@ -1,17 +1,15 @@
-package com.example.demo.service;
+package com.silvertouch.java.service;
 
-import com.example.demo.dtos.DepartmentDTO;
-import com.example.demo.dtos.EmpResDTO;
-import com.example.demo.dtos.EmployeeDTO;
-import com.example.demo.dtos.EmployeeReportDTO;
-import com.example.demo.model.Department;
-import com.example.demo.model.Employee;
-import com.example.demo.repo.DepartmentRepository;
-import com.example.demo.repo.EmployeeRepository;
+import com.silvertouch.java.dtos.DepartmentDTO;
+import com.silvertouch.java.dtos.EmpResDTO;
+import com.silvertouch.java.dtos.EmployeeDTO;
+import com.silvertouch.java.model.Department;
+import com.silvertouch.java.model.Employee;
+import com.silvertouch.java.repo.DepartmentRepository;
+import com.silvertouch.java.repo.EmployeeRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
