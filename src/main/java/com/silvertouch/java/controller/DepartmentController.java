@@ -3,8 +3,11 @@ package com.silvertouch.java.controller;
 import com.silvertouch.java.dtos.DepartmentDTO;
 import com.silvertouch.java.dtos.EmpResDTO;
 import com.silvertouch.java.dtos.EmployeeDTO;
+import com.silvertouch.java.model.Employee;
+import com.silvertouch.java.repo.EmployeeRepository;
 import com.silvertouch.java.service.DepartmentService;
 import com.silvertouch.java.service.ReportService;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,10 +23,12 @@ public class DepartmentController {
 
     private final DepartmentService service;
     private final ReportService reportService;
+    private final EmployeeRepository employeeRepo;
 
-    public DepartmentController(DepartmentService service, ReportService reportService) {
+    public DepartmentController(DepartmentService service, ReportService reportService, EmployeeRepository employeeRepo) {
         this.service = service;
         this.reportService = reportService;
+        this.employeeRepo = employeeRepo;
     }
 
     @PostMapping(value = "/addDepartment")
@@ -72,4 +77,13 @@ public class DepartmentController {
             return ResponseEntity.internalServerError().build();
         }
     }
+
+    @PutMapping("/employees/{empId}")
+    public ResponseEntity<EmployeeDTO> updateEmployee(
+            @PathVariable String empId ,
+            @RequestBody @Valid EmployeeDTO dto) {
+        return ResponseEntity.ok(service.updateEmployee(Long.parseLong(empId), dto));
+    }
+
+
 }
