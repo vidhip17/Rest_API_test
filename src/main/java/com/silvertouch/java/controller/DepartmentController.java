@@ -1,11 +1,10 @@
-package com.example.demo.controller;
+package com.silvertouch.java.controller;
 
-import com.example.demo.dtos.DepartmentDTO;
-import com.example.demo.dtos.EmpResDTO;
-import com.example.demo.dtos.EmployeeDTO;
-import com.example.demo.model.Employee;
-import com.example.demo.service.DepartmentService;
-import com.example.demo.service.ReportService;
+import com.silvertouch.java.dtos.DepartmentDTO;
+import com.silvertouch.java.dtos.EmpResDTO;
+import com.silvertouch.java.dtos.EmployeeDTO;
+import com.silvertouch.java.service.DepartmentService;
+import com.silvertouch.java.service.ReportService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;

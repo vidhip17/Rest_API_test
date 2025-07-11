@@ -1,4 +1,4 @@
-package com.example.demo.dtos;
+package com.silvertouch.java.dtos;
 
 public class EmployeeReportDTO {
 

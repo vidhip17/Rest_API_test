@@ -1,7 +1,8 @@
-package com.example.demo.controller;
+package com.silvertouch.java.controller;
 
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -32,7 +33,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> handleValidationException(MethodArgumentNotValidException ex) {
         String errorMessage = ex.getBindingResult().getFieldErrors().stream()
-                .map(err -> err.getDefaultMessage()) // Only message
+                .map(DefaultMessageSourceResolvable::getDefaultMessage) // Only message
                 .collect(Collectors.joining(", "));
         return ResponseEntity.badRequest().body(errorMessage);
     }
